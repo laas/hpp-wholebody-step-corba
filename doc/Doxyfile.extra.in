@@ -1,0 +1,4 @@
+INPUT                  = @CMAKE_SOURCE_DIR@/include @CMAKE_SOURCE_DIR@/idl
+TAGFILES               =\
+@HPP_TEMPLATE_CORBA_DOXYGENDOCDIR@/hpp-template-corba.doxytag=@HPP_TEMPLATE_CORBA_DOXYGENDOCDIR@
+FILE_PATTERNS          = *.hh *.hxx *.idl
