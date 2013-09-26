@@ -1,0 +1,4 @@
+2013-09-26 Release 0.1.2:
+
+    1. Update dependency versions.
+    2. Add version number as suffix to shared library.
