@@ -40,12 +40,12 @@ SETUP_PROJECT()
 
 
 # Search for dependencies.
-ADD_REQUIRED_DEPENDENCY("hpp-wholebody-step-planner >= 0.1")
+ADD_REQUIRED_DEPENDENCY("hpp-wholebody-step-planner >= 0.2")
 ADD_REQUIRED_DEPENDENCY("hpp-template-corba >= 1.1")
-ADD_REQUIRED_DEPENDENCY("hpp-util >= 0.4")
+ADD_REQUIRED_DEPENDENCY("hpp-util >= 0.6")
 # This dependency ensures us that the intermediate __init__.py files are
 # already installed.
-ADD_REQUIRED_DEPENDENCY("hpp-corbaserver >= 1.13")
+ADD_REQUIRED_DEPENDENCY("hpp-corbaserver >= 2.1")
 # Make sure that python submodule is installed in the same prefix as module.
 IF (NOT ${HPP_CORBASERVER_PREFIX} STREQUAL ${CMAKE_INSTALL_PREFIX})
   MESSAGE(WARNING
