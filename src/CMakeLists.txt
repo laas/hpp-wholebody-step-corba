@@ -40,7 +40,7 @@ PKG_CONFIG_USE_DEPENDENCY(${LIBRARY_NAME} hpp-wholebody-step-planner)
 PKG_CONFIG_USE_DEPENDENCY(${LIBRARY_NAME} hpp-template-corba)
 PKG_CONFIG_USE_DEPENDENCY(${LIBRARY_NAME} hpp-util)
 
-INSTALL(TARGETS ${LIBRARY_NAME} DESTINATION lib)
+INSTALL(TARGETS ${LIBRARY_NAME} DESTINATION ${CMAKE_INSTALL_LIBDIR})
 
 # search for python
 FINDPYTHON()
@@ -101,6 +101,6 @@ PKG_CONFIG_USE_DEPENDENCY(hpp-wholebody-step-server hpp-template-corba)
 PKG_CONFIG_USE_DEPENDENCY(hpp-wholebody-step-server hpp-util)
 KINEO_STANDALONE(hpp-wholebody-step-server)
 
-INSTALL (TARGETS hpp-wholebody-step-server DESTINATION bin)
+INSTALL (TARGETS hpp-wholebody-step-server DESTINATION ${CMAKE_INSTALL_BINDIR})
 INSTALL (FILES ${CMAKE_CURRENT_BINARY_DIR}/hpp-wholebody-step-server.kab
-  DESTINATION bin)
+  DESTINATION ${CMAKE_INSTALL_BINDIR})
