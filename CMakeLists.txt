@@ -25,6 +25,7 @@ INCLUDE(cmake/base.cmake)
 INCLUDE(cmake/cpack.cmake)
 INCLUDE(cmake/idl.cmake)
 INCLUDE(cmake/python.cmake)
+INCLUDE(cmake/kineo.cmake)
 
 SET(PROJECT_NAME hpp-wholebody-step-corba)
 SET(PROJECT_DESCRIPTION "Corba server and python client for hpp-wholebody-step-planner")
@@ -41,6 +42,7 @@ SETUP_PROJECT()
 
 # Search for dependencies.
 ADD_REQUIRED_DEPENDENCY("hpp-wholebody-step-planner >= 0.2")
+ADD_REQUIRED_DEPENDENCY("hpp-corbaserver >= 2.1")
 ADD_REQUIRED_DEPENDENCY("hpp-template-corba >= 1.1")
 ADD_REQUIRED_DEPENDENCY("hpp-util >= 0.6")
 # This dependency ensures us that the intermediate __init__.py files are

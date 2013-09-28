@@ -91,3 +91,16 @@ INSTALL(
   ${CMAKE_CURRENT_SOURCE_DIR}/hpp/corbaserver/wholebody_step/client.py
   DESTINATION ${PYTHON_SITELIB}/hpp/corbaserver/wholebody_step
   )
+
+# Standalone corba server
+ADD_EXECUTABLE (hpp-wholebody-step-server hpp-wholebody-step-corba.cc)
+TARGET_LINK_LIBRARIES (hpp-wholebody-step-server ${LIBRARY_NAME})
+PKG_CONFIG_USE_DEPENDENCY(hpp-wholebody-step-server hpp-wholebody-step-planner)
+PKG_CONFIG_USE_DEPENDENCY(hpp-wholebody-step-server hpp-corbaserver)
+PKG_CONFIG_USE_DEPENDENCY(hpp-wholebody-step-server hpp-template-corba)
+PKG_CONFIG_USE_DEPENDENCY(hpp-wholebody-step-server hpp-util)
+KINEO_STANDALONE(hpp-wholebody-step-server)
+
+INSTALL (TARGETS hpp-wholebody-step-server DESTINATION bin)
+INSTALL (FILES ${CMAKE_CURRENT_BINARY_DIR}/hpp-wholebody-step-server.kab
+  DESTINATION bin)
