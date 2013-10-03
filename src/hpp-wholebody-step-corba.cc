@@ -32,7 +32,8 @@ main (int argc, char* argv[])
   Planner* wbsPlanner = new Planner (samplingPeriod);
   wbsPlanner->setFootPrintLimits(-0.2,0.2,-0.25,-0.13,-M_PI /4,0.1);
 
-  CorbaServer corbaServer (wbsPlanner, argc, (const char**) argv, true);
+  CorbaServer corbaServer (wbsPlanner, argc,
+			   const_cast<const char**> (argv), true);
   WholeBodyServer wbsServer (argc, argv, true);
   wbsServer.setPlanner (wbsPlanner);
 
